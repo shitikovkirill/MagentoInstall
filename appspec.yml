@@ -3,3 +3,8 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/magento
+hooks:
+  AfterInstall:
+    - location: bin/start.sh
+      timeout: 300
+      runas: root
