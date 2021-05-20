@@ -3,7 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo Build started on `date`
+      - composer config --global http-basic.repo.magento.com 5310458a34d580de1700dfe826ff19a1 255059b03eb9d30604d5ef52fca7465d
+      - composer install
 
 artifacts:
   files:
