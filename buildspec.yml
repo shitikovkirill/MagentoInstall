@@ -10,5 +10,5 @@ artifacts:
   files:
     - '**/*'
   exclude-paths:
-    - './app/etc/'
+    - './app/etc/*'
   name: source.zip
