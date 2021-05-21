@@ -9,4 +9,6 @@ phases:
 artifacts:
   files:
     - '**/*'
+  exclude-paths:
+    - 'app/etc/'
   name: source.zip
