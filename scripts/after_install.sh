@@ -8,6 +8,6 @@ echo "Restart nginx"
 sudo service nginx restart
 
 if [ ! -f "${MAGE_ROOT}/app/etc" ]; then
-    echo "Add link from efs to magento folder"
-    ln -s /mnt/efs/etc/ /var/www/html/magento/app/
+    echo "Add etc link from efs to ${MAGE_ROOT}"
+    ln -s /mnt/efs/etc/ "${MAGE_ROOT}/app/"
 fi
