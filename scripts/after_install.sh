@@ -14,3 +14,6 @@ if [ ! -f "${MAGE_ROOT}/app/etc" ]; then
     echo "Add etc link from efs to ${MAGE_ROOT}"
     ln -s /mnt/efs/etc/ "${MAGE_ROOT}/app/"
 fi
+
+php "${MAGE_ROOT}/bin/magento" setup:upgrade
+php "${MAGE_ROOT}/bin/magento" setup:di:compile
