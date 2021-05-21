@@ -8,4 +8,4 @@ echo "Restart nginx"
 sudo service nginx restart
 
 echo "Add link from efs to magento folder"
-ln -s /mnt/efs/etc/ /var/www/html/magento/
+ln -s /mnt/efs/etc/ /var/www/html/magento/app/
