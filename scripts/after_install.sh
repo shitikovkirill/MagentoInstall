@@ -1,3 +1,4 @@
+set -ex
 MAGE_ROOT="/var/www/html/magento"
 EFS_ROOT="/mnt/efs"
 
