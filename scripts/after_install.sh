@@ -1,4 +1,3 @@
-env
 MAGE_ROOT="/var/www/html/magento"
 EFS_ROOT="/mnt/efs"
 
@@ -24,7 +23,7 @@ echo "Delete ${MAGE_ROOT}/pub/media/ folder"
 rm -rf "${MAGE_ROOT}/pub/media/"
 if [ ! -f "${MAGE_ROOT}/pub/media/" ]; then
     echo "Add etc link from efs to ${MAGE_ROOT}"
-    ln -s "${EFS_ROOT}/media/" "${MAGE_ROOT}/pub/media/"
+    ln -s "${EFS_ROOT}/media/" "${MAGE_ROOT}/pub/"
 fi
 
 php "${MAGE_ROOT}/bin/magento" setup:upgrade
