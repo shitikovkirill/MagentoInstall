@@ -2,9 +2,6 @@ set -ex
 MAGE_ROOT="/var/www/html/magento"
 EFS_ROOT="/mnt/efs"
 
-echo "Fix permission"
-chmod -R 777 $MAGE_ROOT
-
 echo "Restart nginx"
 sudo service nginx restart
 
@@ -29,3 +26,7 @@ fi
 
 php "${MAGE_ROOT}/bin/magento" setup:upgrade
 php "${MAGE_ROOT}/bin/magento" setup:di:compile
+
+echo "Fix permission"
+sudo chmod -R 777 $MAGE_ROOT
+sudo rm -rf "${MAGE_ROOT}/var/page_cache"
