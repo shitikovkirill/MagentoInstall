@@ -30,3 +30,5 @@ php "${MAGE_ROOT}/bin/magento" setup:di:compile
 echo "Fix permission"
 sudo chmod -R 777 $MAGE_ROOT
 sudo rm -rf "${MAGE_ROOT}/var/page_cache"
+
+echo "Done"
