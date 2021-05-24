@@ -4,17 +4,18 @@ files:
   - source: /
     destination: /var/www/html/magento
 hooks:
-  AfterInstall:
+  Install:
     - location: scripts/link_efs.sh
       timeout: 300
       runas: root
     - location: scripts/restart_nginx.sh
       timeout: 300
       runas: root
-  BeforeAllowTraffic:
+  AfterInstall:
     - location: scripts/fix_permissions.sh
       timeout: 300
       runas: root
+  ApplicationStart:
     - location: scripts/run_magento_scripts.sh
       timeout: 300
       runas: magento
