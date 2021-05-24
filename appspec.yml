@@ -25,5 +25,3 @@ hooks:
     - location: scripts/run_magento_scripts.sh
       timeout: 300
       runas: magento
-
-
