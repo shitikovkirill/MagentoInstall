@@ -24,4 +24,7 @@ hooks:
   ApplicationStart:
     - location: scripts/run_magento_scripts.sh
       timeout: 300
-      runas: magento
+      runas: root
+    - location: scripts/prepare.sh
+      timeout: 300
+      runas: root
