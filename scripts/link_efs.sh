@@ -6,7 +6,7 @@ echo "Create ${EFS_ROOT}/etc/ folder"
 mkdir -p "${EFS_ROOT}/etc/"
 # echo "Renew etc"
 # yes | cp -rf "${MAGE_ROOT}/app/etc/*" "${EFS_ROOT}/etc/"
-if [ ! -L "${MAGE_ROOT}/app/etc"]; then
+if [[ ! -L ${MAGE_ROOT}/app/etc && -d ${MAGE_ROOT}/app/etc ]]; then
     echo "Delete ${MAGE_ROOT}/app/etc folder"
     rm -rf "${MAGE_ROOT}/app/etc"
     echo "Creating etc link"
@@ -16,7 +16,7 @@ fi
 echo "Create ${EFS_ROOT}/media/ folder"
 mkdir -p "${EFS_ROOT}/media/"
 
-if [ ! -L "${MAGE_ROOT}/pub/media/"]; then
+if [[ ! -L ${MAGE_ROOT}/pub/media/ && -d ${MAGE_ROOT}/pub/media/ ]]; then
     echo "Delete ${MAGE_ROOT}/pub/media/ folder"
     rm -rf "${MAGE_ROOT}/pub/media/"
     echo "Creating media link"
