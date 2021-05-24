@@ -5,8 +5,6 @@ echo "Create ${EFS_ROOT}/etc/ folder"
 mkdir -p "${EFS_ROOT}/etc/"
 
 if [[ ! -L ./app/etc && -d ${MAGE_ROOT}/app/etc ]]; then
-    echo "Renew etc"
-    yes | cp -rf "./app/etc/*" "${EFS_ROOT}/etc/"
     echo "Delete ./app/etc folder"
     rm -rf "./app/etc"
     echo "Creating etc link"
