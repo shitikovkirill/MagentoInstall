@@ -2,9 +2,6 @@ set -ex
 MAGE_ROOT="/var/www/html/magento"
 EFS_ROOT="/mnt/efs"
 
-echo "Restart nginx"
-sudo service nginx restart
-
 echo "Create ${EFS_ROOT}/etc/ folder"
 mkdir -p "${EFS_ROOT}/etc/"
 echo "Renew etc"

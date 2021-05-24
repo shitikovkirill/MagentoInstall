@@ -5,7 +5,10 @@ files:
     destination: /var/www/html/magento
 hooks:
   AfterInstall:
-    - location: scripts/after_install.sh
+    - location: scripts/link_efs.sh
+      timeout: 300
+      runas: root
+    - location: scripts/restart_nginx.sh
       timeout: 300
       runas: root
   BeforeAllowTraffic:

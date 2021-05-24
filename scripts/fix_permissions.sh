@@ -1,3 +1,6 @@
+set -ex
+MAGE_ROOT="/var/www/html/magento"
+
 echo "Fix permission"
 find "${MAGE_ROOT}" -type f -exec chmod 664 {} \;
 find "${MAGE_ROOT}" -type d -exec chmod 775 {} \;
