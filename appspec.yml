@@ -8,3 +8,12 @@ hooks:
     - location: scripts/after_install.sh
       timeout: 300
       runas: root
+  BeforeAllowTraffic:
+    - location: scripts/fix_permissions.sh
+      timeout: 300
+      runas: root
+    - location: scripts/run_magento_scripts.sh
+      timeout: 300
+      runas: magento
+
+
