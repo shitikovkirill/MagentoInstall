@@ -8,9 +8,9 @@ hooks:
     - location: scripts/link_efs.sh
       timeout: 300
       runas: root
-    - location: scripts/restart_nginx.sh
-      timeout: 300
-      runas: root
+    #- location: scripts/restart_nginx.sh
+    #  timeout: 300
+    #  runas: root
     - location: scripts/fix_permissions.sh
       timeout: 300
       runas: root
