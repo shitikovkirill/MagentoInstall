@@ -6,18 +6,20 @@ echo "Create ${EFS_ROOT}/etc/ folder"
 mkdir -p "${EFS_ROOT}/etc/"
 # echo "Renew etc"
 # yes | cp -rf "${MAGE_ROOT}/app/etc/*" "${EFS_ROOT}/etc/"
-rm -rf "${MAGE_ROOT}/app/etc"
-if [ ! -f "${MAGE_ROOT}/app/etc" ]; then
-    echo "Add etc link from efs to ${MAGE_ROOT}"
+if [ ! -L "${MAGE_ROOT}/app/etc"]; then
+    echo "Delete ${MAGE_ROOT}/app/etc folder"
+    rm -rf "${MAGE_ROOT}/app/etc"
+    echo "Creating etc link"
     ln -s "${EFS_ROOT}/etc/" "${MAGE_ROOT}/app/"
 fi
 
 echo "Create ${EFS_ROOT}/media/ folder"
 mkdir -p "${EFS_ROOT}/media/"
-echo "Delete ${MAGE_ROOT}/pub/media/ folder"
-rm -rf "${MAGE_ROOT}/pub/media/"
-if [ ! -f "${MAGE_ROOT}/pub/media/" ]; then
-    echo "Add etc link from efs to ${MAGE_ROOT}"
+
+if [ ! -L "${MAGE_ROOT}/pub/media/"]; then
+    echo "Delete ${MAGE_ROOT}/pub/media/ folder"
+    rm -rf "${MAGE_ROOT}/pub/media/"
+    echo "Creating media link"
     ln -s "${EFS_ROOT}/media/" "${MAGE_ROOT}/pub/"
 fi
 
