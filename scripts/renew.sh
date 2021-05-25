@@ -18,7 +18,7 @@ if [[ ! -d "${EFS_ROOT}/etc/" ]]; then
     chown -R magento:magento "${EFS_ROOT}/etc/"
 fi
 
-yes | cp -rf ${MAGE_ROOT}/app/etc/* "${EFS_ROOT}/etc/"
+yes | sudo -u magento cp -rf ${MAGE_ROOT}/app/etc/* "${EFS_ROOT}/etc/"
 
 echo "Renew media"
 if [[ ! -d "${EFS_ROOT}/media/" ]]; then
@@ -26,4 +26,4 @@ if [[ ! -d "${EFS_ROOT}/media/" ]]; then
     chown -R magento:magento "${EFS_ROOT}/media/"
 fi
 
-yes | cp -rf ${MAGE_ROOT}/pub/media/* "${EFS_ROOT}/media/"
+yes | sudo -u magento cp -rf ${MAGE_ROOT}/pub/media/* "${EFS_ROOT}/media/"
