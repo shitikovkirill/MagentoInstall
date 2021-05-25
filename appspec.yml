@@ -2,29 +2,28 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/magento
+    destination: /var/www/html/magento-deploy
 hooks:
   BeforeInstall:
     - location: scripts/cleanup.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/renew_etc.sh
+    - location: scripts/renew.sh
       timeout: 300
       runas: root
     - location: scripts/link_efs.sh
-      timeout: 300
-      runas: root
-    - location: scripts/restart_nginx.sh
-      timeout: 300
-      runas: root
-  ApplicationStart:
-    - location: scripts/prepare.sh
       timeout: 300
       runas: root
     - location: scripts/run_magento_scripts.sh
       timeout: 300
       runas: root
     - location: scripts/fix_permissions.sh
+      timeout: 300
+      runas: root
+    - location: scripts/switch_folder.sh
+      timeout: 300
+      runas: root
+    - location: scripts/reload.sh
       timeout: 300
       runas: root
